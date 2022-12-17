@@ -6,6 +6,7 @@ var receiveMessageButton = document.querySelector('#receive-message-button')
 var viewSavedButton = document.querySelector('#view-saved-messages')
 var homeButton = document.querySelector('#home-button')
 
+
 // also inserting home and favorite message button below - total of 4 buttons
 
 // main page sections -
@@ -18,13 +19,15 @@ var affirmationRadio = document.querySelector('#affirmation-selector')
 var mantraRadio = document.querySelector('#mantra-selector')
 
 //main page section 2 elements -
-var messageBox = document.querySelector('.message')
+// var messageBox = document.querySelector('.message')
 var message
 
 // view saved messages section:
 var savedMessageSection = document.querySelector('.view-saved-messages')
 var favoriteMessages = document.querySelector('.saved-messages')
+var savedMessage = document.querySelector('#saved-message')
 var savedMessages= [];
+var messageBox = document.querySelector('.message-box')
 
 // Event Listeners -
 
@@ -54,7 +57,7 @@ function displayMessage() {
     </section>`
         var favoriteButton = document.querySelector('#favorite-message-button')
         favoriteButton.addEventListener('click', function() {
-            saveMessage(message)})
+        saveMessage(message)})
 }
 
 function saveMessage(message) {
@@ -72,8 +75,40 @@ function returnHome() {
 function showSavedMessages() {
     show(savedMessageSection)
     hide(mainPage)
+    hide(viewSavedButton)
     displaySavedMessages()
     }
+
+// function displaySavedMessages() {
+//     favoriteMessages.innerHTML = '';
+//     for (var i = 0; i < savedMessages.length; i++) {
+//         favoriteMessages.innerHTML += `
+//         <section class ='message-box'>
+//             <article class='saved-message'>${savedMessages[i]}</article>
+//             <button class="remove-saved-message-button">X</button>
+//         </section>`
+//         var savedMessage = document.querySelector('.saved-message')
+//         var deleteMessageButton = document.querySelector('.remove-saved-message-button')
+//         deleteMessageButton.addEventListener('click', function() {
+//         removeMessage(savedMessage.innerText)})
+//     } show(favoriteMessages)
+// }
+
+// function displaySavedMessages() {
+//     favoriteMessages.innerHTML = '';
+//     for (var i = 0; i < savedMessages.length; i++) {
+//         favoriteMessages.innerHTML += `
+//         <section class ='message-box'>
+//             <article class='saved-message'>${savedMessages[i]}</article>
+//             <button class="remove-saved-message-button">X</button>
+//         </section>`
+//         var removeMessageButtons = document.querySelectorAll('.remove-saved-message-button')
+//         removeMessageButtons.forEach(element => {
+//             element.addEventListener('click', function() {
+//                 removeMessage(savedMessages[i])})
+//         })
+//     } show(favoriteMessages)
+// }
 
 function displaySavedMessages() {
     favoriteMessages.innerHTML = '';
@@ -89,9 +124,31 @@ function displaySavedMessages() {
     removeMessage(message)})
 }
 
+// why is there not any event listeners for the buttons below???
+
 function removeMessage(messegeToDelete) {
     savedMessages.splice(savedMessages[savedMessages.indexOf(messegeToDelete)], 1)
     displaySavedMessages()}
+
+// function removeMessage(messageToDelete) {
+//     console.log(event.target.parentNode)
+//     console.log(messageToDelete[0].innerHTML)
+// }
+// find the corresponding text box
+// event.target.parentNode
+
+// find the inner text of that text box
+// messageToDelete[0].innerHTML
+
+// find the index position of that string value in the array
+//splice that array value
+    // savedMessages.splice(savedMessages[savedMessages.indexOf(messageToDelete)], 1)
+    // displaySavedMessages()}
+
+// function removeMessage(messageToDelete) {
+//     console.log(messageToDelete)
+//     savedMessages.splice(savedMessages[savedMessages.indexOf(messageToDelete)], 1)
+//     displaySavedMessages()}
 
 // Misc. Functions -
 
