@@ -1,29 +1,41 @@
 // Variables -
 
+// buttons -
+
 var receiveMessageButton = document.querySelector('#receive-message-button')
+var viewSavedButton = document.querySelector('#view-saved-messages')
+var homeButton = document.querySelector('#home-button')
+
+// also inserting home and favorite message button below - total of 4 buttons
+
+// main page sections -
 var textBoxOne = document.querySelector('.textBox1')
-var affirmationRadio = document.querySelector('#affirmation-selector')
-var mantraRadio = document.querySelector('#mantra-selector')
 var textBoxTwo = document.querySelector('.textBox2')
-var meditationIcon = document.querySelector('img')
-var messageBox = document.querySelector('.message')
-var savedMessageSection = document.querySelector('.saved-messages')
-var saveMessageButton = document.querySelector('#view-saved-messages')
-var h2 = document.querySelector('.h2')
 var mainPage = document.querySelector('#main-page')
 
-var message;
+// main page section 1 elements -
+var affirmationRadio = document.querySelector('#affirmation-selector')
+var mantraRadio = document.querySelector('#mantra-selector')
 
+//main page section 2 elements -
+var messageBox = document.querySelector('.message')
+var message
+
+// view saved messages section:
+var savedMessageSection = document.querySelector('.view-saved-messages')
+var favoriteMessages = document.querySelector('.saved-messages')
 var savedMessages= [];
-
 
 // Event Listeners -
 
-receiveMessageButton.addEventListener('click', function() {
-    displayMessage()
-})
+// Displays random message when receive message button is clicked
+receiveMessageButton.addEventListener('click', displayMessage)
 
-saveMessageButton.addEventListener('click', showSavedMessages)
+// displays saved message page when view-saved messages button is clicked
+viewSavedButton.addEventListener('click', showSavedMessages)
+
+homeButton.addEventListener('click', function(){
+    returnHome()})
 
 // Event Handlers -
 
@@ -33,32 +45,53 @@ function displayMessage() {
     } else if (mantraRadio.checked === true) {
         message = mantras[getRandomIndex(mantras)];
     } else {
-        message = 'Please select a message option!'
-        textBoxTwo.innerHTML = `
-        <p>${message}</p>`
+        textBoxTwo.innerHTML = `<p>${'Please select a message option!'}</p>`
         return
     } textBoxTwo.innerHTML = `
     <section>
         <p>${message}</p>
-        <button class='button-format'>Save Message</button>
+        <button class='button-main' id='favorite-message-button'>Favorite Message</button>
     </section>`
-
-    var favoriteButton = document.querySelector('.favorite-button')
-    console.log(favoriteButton)
-    favoriteButton.addEventListener('click', function() {
-        saveMessage(message)})
+        var favoriteButton = document.querySelector('#favorite-message-button')
+        favoriteButton.addEventListener('click', function() {
+            saveMessage(message)})
 }
 
 function saveMessage(message) {
+    if (!savedMessages.includes(message))
     savedMessages.push(message)
-}
+    }
 
-var image = document.querySelector('.img')
+
+function returnHome() {
+    hide(savedMessageSection)
+    show(mainPage)
+    hide(favoriteMessages)
+}
 
 function showSavedMessages() {
     show(savedMessageSection)
     hide(mainPage)
+    displaySavedMessages()
+    }
+
+function displaySavedMessages() {
+    favoriteMessages.innerHTML = '';
+    for (var i = 0; i < savedMessages.length; i++) {
+        favoriteMessages.innerHTML += `
+        <section class ='message-box'>
+            <article id='saved-message'>${savedMessages[i]}</article>
+            <button id="remove-saved-message-button">X</button>
+        </section>`
+    } show(favoriteMessages)
+    var deleteMessageButton = document.querySelector('#remove-saved-message-button')
+    deleteMessageButton.addEventListener('click', function() {
+    removeMessage(message)})
 }
+
+function removeMessage(messegeToDelete) {
+    savedMessages.splice(savedMessages[savedMessages.indexOf(messegeToDelete)], 1)
+    displaySavedMessages()}
 
 // Misc. Functions -
 

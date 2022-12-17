@@ -7,24 +7,25 @@
   <body>
     <h1 class = 'header'>✨ Self Care Center ✨</h1>
     <section id="main-page">
-    <button class="button-format" id="view-saved-messages">View Saved Messages</button>
-    <h2>Which type of message?</h2>
-    <section class="textBox1">
-      <form>
-          <input class="radio" type="radio" id="affirmation-selector" name="radio-input">
-          <label for="affirmation-button" id="affirmation-label">affirmation</label>
-          <input class="radio" type="radio" id="mantra-selector" name="radio-input">
-          <label for="mantra-button" class="radio">mantra</label>
-      </form>
-      <button id="receive-message-button" class="button-format">Receive Message</button>
+      <button class='button-main'id="view-saved-messages">View Saved Messages</button>
+      <h2>Which type of message?</h2>
+      <section class="textBox1">
+        <form>
+            <input class="radio" type="radio" id="affirmation-selector" name="radio-input">
+            <label for="affirmation-button" id="affirmation-label">affirmation</label>
+            <input class="radio" type="radio" id="mantra-selector" name="radio-input">
+            <label for="mantra-button" class="radio">mantra</label>
+        </form>
+        <button id="receive-message-button" class="button-main">Receive Message</button>
+        </section>
+      <section class = "textBox2">
+        <img class ="medidation icon" src="./assets/meditate.svg" alt="meditation icon"/>
+      </section>
     </section>
-    <section class = "textBox2">
-      <img class ="medidation icon" src="./assets/meditate.svg" alt="meditation icon"/>
-    </section>
-  </section>
-
-    <section class="saved-messages hidden">
-      <h1>HELLO</h1>
+    <section class="view-saved-messages hidden">
+      <button class='button-main'id="home-button">Home</button>
+      <h2>Saved Messages</h2>
+      <section class="saved-messages hidden"></section>
     </section>
         <script type="text/javascript" src="main.js"></script>
         <script type="text/javascript" src="messages.js"></script>

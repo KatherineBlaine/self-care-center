@@ -26,13 +26,8 @@ body {
 
 /* ~~~~~~~~~~~~~~~~~ Text Box 1 ~~~~~~~~~~~~~~~~~*/
 
-#view-saved-messages {
-    background-color: #f7e4bf;
-    color:#134d71
-}
-
 h2 {
-    margin-top: 80px;
+    margin-top: 60px;
     text-align: center;
     color: #ffffff
 }
@@ -57,19 +52,20 @@ form {
     margin-left: 15vh;
 }
 
-.button-format {
-    width:185px;
+
+/* ~~~~~~~~~~~~~~~~~ BUTTONS ~~~~~~~~~~~~~~~~~*/
+
+.button-main {
     font-size: 17px;
     border-width: 0px;
-    background-color: #134d71;
-    color:#f7e4bf;
-    text-align: center;
+    background-color:#134d71;
+    color:#ffffff;
     margin: auto;
     margin-top: 27px;
     display: flex;
     border-radius: 5px;
-    justify-content: space-around;
-    padding: 3.5px;
+    padding-inline: 20px;
+    padding-block: 3.5px;
 }
 
 /* ~~~~~~~~~~~~~~~~~ Text Box 2 ~~~~~~~~~~~~~~~~~*/
@@ -77,13 +73,16 @@ form {
 .textBox2 {
     display: flex;
     justify-content: center;
+    align-items:center;
+    text-align: center;
     margin: auto;
-    margin-bottom: 200px;
-    height: 130px;
-    width: 800px;
+    margin-bottom: 35vh;
+    height: 12vh;
+    width: 100vh;
     background: #ffffff;
     border-radius: 10px;
     font-size: 24px;
+    padding: 10vh;
 }
 
 .textBox2 > img {
@@ -92,15 +91,34 @@ form {
     width: 80px;
 }
 
-.favorite-button {
+/* ~~~~~~~~~~~~~~~~~ view saved messages section ~~~~~~~~~~~~~~~~~*/
+
+
+.saved-messages {
     display: flex;
-    margin-bottom: 25px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+#remove-saved-message-button {
     margin: auto;
-    width: 100px;
-    background-color:#f7e4bf;
+    background-color: #f7e4bf;
     border-radius: 5px;
-    border-width: 0px;
-    color: #134d71;
+    border: 0;
+}
+
+#saved-message {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px;
+    width:fit-content;
+    font-size: 20px;
+    border-radius: 5px;
 }
 
 /* font-family: 'Quicksand', sans-serif;
