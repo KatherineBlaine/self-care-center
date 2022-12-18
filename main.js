@@ -9,8 +9,6 @@ var mainPage = document.querySelector('#main-page')
 var affirmationRadio = document.querySelector('#affirmation-selector')
 var mantraRadio = document.querySelector('#mantra-selector')
 
-var message
-
 var savedMessageSection = document.querySelector('.view-saved-messages')
 var favoriteMessages = document.querySelector('.saved-messages')
 var savedMessage = document.querySelector('#saved-message')
@@ -19,9 +17,7 @@ var messageBox = document.querySelector('.message-box')
 
 
 receiveMessageButton.addEventListener('click', displayMessage)
-
 viewSavedButton.addEventListener('click', showSavedMessages)
-
 homeButton.addEventListener('click', function(){
     returnHome()})
 
@@ -38,9 +34,9 @@ function displayMessage() {
         <p>${message}</p>
         <button class='button-main' id='favorite-message-button'>Favorite Message</button>
     </section>`
-        var favoriteButton = document.querySelector('#favorite-message-button')
-        favoriteButton.addEventListener('click', function() {
-        saveMessage(message)})
+    var favoriteButton = document.querySelector('#favorite-message-button')
+    favoriteButton.addEventListener('click', function() {
+    saveMessage(message)})
 }
 
 function saveMessage(message) {
@@ -78,8 +74,7 @@ function displaySavedMessages() {
 function removeMessage(messegeToDelete) {
     savedMessages.splice(savedMessages[savedMessages.indexOf(messegeToDelete)], 1)
     displaySavedMessages()}
-
-
+    
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length)
 }

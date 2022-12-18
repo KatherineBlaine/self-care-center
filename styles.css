@@ -24,8 +24,6 @@ body {
     display: none;
 }
 
-/* ~~~~~~~~~~~~~~~~~ Text Box 1 ~~~~~~~~~~~~~~~~~*/
-
 h2 {
     margin-top: 60px;
     text-align: center;
@@ -52,9 +50,6 @@ form {
     margin-left: 15vh;
 }
 
-
-/* ~~~~~~~~~~~~~~~~~ BUTTONS ~~~~~~~~~~~~~~~~~*/
-
 .button-main {
     font-size: 17px;
     border-width: 0px;
@@ -67,8 +62,6 @@ form {
     padding-inline: 20px;
     padding-block: 3.5px;
 }
-
-/* ~~~~~~~~~~~~~~~~~ Text Box 2 ~~~~~~~~~~~~~~~~~*/
 
 .textBox2 {
     display: flex;
@@ -90,9 +83,6 @@ form {
     margin: auto;
     width: 80px;
 }
-
-/* ~~~~~~~~~~~~~~~~~ view saved messages section ~~~~~~~~~~~~~~~~~*/
-
 
 .saved-messages {
     display: flex;
@@ -120,12 +110,3 @@ form {
     font-size: 20px;
     border-radius: 5px;
 }
-
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
